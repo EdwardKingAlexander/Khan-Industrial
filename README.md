@@ -9,4 +9,4 @@
 #### Edward Alexander/Khan Industrial Supply LLC
 * Homepage: https://khan.supply https://RockyMountainWeb.Design
 * Email: Edward@RockyMountainWeb.Design
-* Twitter: [@twitterhandle](https://twitter.com/EdwardKingAlex "twitterhandle on twitter")
+* Twitter: [@EdwardKingAlex](https://twitter.com/EdwardKingAlex "twitterhandle on twitter")

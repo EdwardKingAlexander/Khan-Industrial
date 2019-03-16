@@ -11,17 +11,17 @@
             <!-----start of row div----->
         <div class="row shadow mb-3">   
             <!---left side of product div------->
-            @foreach($products as $product)
+           
             <div class="mt-3 col-6 shadow mb-3">
                 <img class="shadow p-1 mb-2" src="/images/products_small/115-D55168.jpg" alt="" class="img-responsive">
         
             <h4>Part Number</h4>
-                <p>{{$product->Part_Number}}</p>
-                <h5 class="{{ ($product->Stocked_Houston_TX == 0) ? "text-success" : "text-danger" }} mb-3" >In Stock</h5>
+                <p>Part Number</p>
+                <h5 class="text-success mb-3" >In Stock</h5>
                 <h4>Price Each</h4>
-            <p>{{$product->List_Price}}</p>
+            <p>List Price</p>
                 <h4>Item Description</h4>
-                <p>{{$product->Item_Description}}</p>
+                <p>Item Description</p>
                
           
             </div><!--------end of left side of product div------>
@@ -44,7 +44,7 @@
                         <p>Ships from: SHIPPING with SHIPPING WEIGHT/ea</p>
                 </div>
                 <!----------end of right side of product div--------->
-                @endforeach
+          
 
                 <div class="row">
                 <div class="col-12 mb-3"><hr></div></div>

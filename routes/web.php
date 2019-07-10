@@ -15,14 +15,14 @@ use App\VendorContact;
 
 
 
- /////////////////////////Visitor routes//////////////////////////////////////p/////
+/////////////////////////Visitor routes//////////////////////////////////////p/////
 
- /*
+/*
 Visitor routes
 
  */
 
- Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 
 // Route::get('/', function(){
 //     return view('home');
@@ -80,7 +80,7 @@ Route::get('/checkout', function () {
     return view('store.checkout');
 });
 
-Route::get('/add-to-cart/{id}', 'CartController@addToCart');
+Route::post('/add-to-cart/{vendor_id}/{id}', 'CartController@addToCart');
 Route::get('/guest-redirect', 'CartController@guestRedirect');
 
 
@@ -132,6 +132,10 @@ Authorizatized routes
 
  */
 Auth::routes(['verify' => true]);
+
+Route::get('/my_account/{id}', 'UserController@my_account');
+Route::get('/my_account/{id}/current-orders', 'UserController@current_orders');
+Route::get('/my_account/{id}/past-orders', 'UserController@past_orders');
 
 Route::get('profile', function () {
     // Only verified users may enter...
@@ -250,7 +254,7 @@ Route::get('/product-search', 'ProductController@search');
 
 /////////////////////////////////start of community routes /////////////////////////////////////
 
- /*
+/*
 Community routes
 
  */
@@ -269,7 +273,7 @@ Route::get('/community', function () {
 
 /////////////////////////////////start of services routes /////////////////////////////////////
 
- /*
+/*
 Services routes
 
  */
@@ -289,17 +293,13 @@ Route::get('/services', function () {
 Route::get('/test', function () {
 
 
-   // $contacts = App\Vendor::find(5)->hasManyVendorContacts;
-   // passes the vendor_id into the find variable, returning the vendor from the 
-   // Vendor model
-  //  $vendors = App\VendorContact::find(5)->vendorContactHasOneVendorId;
+    // $contacts = App\Vendor::find(5)->hasManyVendorContacts;
+    // passes the vendor_id into the find variable, returning the vendor from the 
+    // Vendor model
+    //  $vendors = App\VendorContact::find(5)->vendorContactHasOneVendorId;
 
 
 
 
-    return view('test');//->with('vendors', $vendors)->with('contacts', $contacts);
+    return view('test'); //->with('vendors', $vendors)->with('contacts', $contacts);
 });
-
-
-
-

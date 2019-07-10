@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="container">
-        <div class="col-12 shadow mb-3"><h1 class="mb-3 pt-3 text-center ">Shopping Cart</h1><h4 class="text-right">Total:</h4><hr></div>
+        <div class="col-12 shadow mb-3"><h1 class="m-3 p-3 text-center ">Shopping Cart</h1><h4 class="text-right">Total:</h4><hr></div>
         
         <a class="btn btn-outline-primary mb-4" href="/">Continue Shopping</a>
 
@@ -13,7 +13,7 @@
             <!---left side of product div------->
            
             <div class="mt-3 col-6 shadow mb-3">
-                <img class="shadow p-1 mb-2" src="/images/products_small/115-D55168.jpg" alt="" class="img-responsive">
+                <img class="shadow p-2 m-2" src="/images/products_small/115-D55168.jpg" alt="" class="img-responsive">
         
             <h4>Part Number</h4>
                 <p>Part Number</p>
@@ -27,7 +27,7 @@
             </div><!--------end of left side of product div------>
          
             <!----right side of product div------->
-            <div class="mt-4 col-6 shadow mb-3">
+            <div class="mt-3 col-6 shadow mb-3">
                   
                     <h4>Quantity</h4>
                     <p>*Minimum Order: 1 ea</p>

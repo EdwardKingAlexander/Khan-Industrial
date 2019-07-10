@@ -19,7 +19,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-
       
         view()->composer(['partials.modules.product_category_section','categories.productCategories'], function($view){
            

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -51,5 +52,49 @@ class UserController extends Controller
             // they will be redirected home
             return redirect('/');
         }
+    }
+
+    public function shipping_info(Request $request)
+    {
+        if(Auth::user()->id == $request->id){
+            return view('users.shipping_info');
+        }else{
+            // if the user id does not match the authenticated user id, then
+            // they will be redirected home
+            return redirect('/');
+        }
+    }
+
+    public function billing_info(Request $request)
+    {
+        if(Auth::user()->id == $request->id){
+            return view('users.billing_info');
+        }else{
+            // if the user id does not match the authenticated user id, then
+            // they will be redirected home
+            return redirect('/');
+        }
+    }
+
+    public function invoices(Request $request)
+    {
+        if(Auth::user()->id == $request->id){
+            return view('users.invoices');
+        }else{
+            // if the user id does not match the authenticated user id, then
+            // they will be redirected home
+            return redirect('/');
+        }   
+    }
+
+    public function change_login(Request $request)
+    {
+        if(Auth::user()->id == $request->id){
+            return view('users.change_login');
+        }else{
+            // if the user id does not match the authenticated user id, then
+            // they will be redirected home
+            return redirect('/');
+        } 
     }
 }

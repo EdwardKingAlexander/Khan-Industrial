@@ -21,7 +21,7 @@ class SubCategory extends Model
      *
      * @var array
      */
-    protected $fillable = ['subcategory', 'description'];
+    protected $fillable = ['subcategory_name', 'description'];
 
     /**
      * The table associated with the model.
@@ -30,18 +30,25 @@ class SubCategory extends Model
      */
     protected $table = 'subcategories';
 
+     /**
+     * 
+     * Redefining route key
+     * 
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'subcategory_name';
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
     public function ors()
     {
-        return $this->hasMany(OrsNasco::class);
+        return $this->hasMany(OrsNasco::class,'subcategory_id');
     }
 
-    public function products()
-    {
-        return $this->hasMany(Product::class);
-    }
 
 }

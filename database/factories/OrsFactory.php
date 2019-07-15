@@ -6,7 +6,7 @@ $factory->define(App\OrsNasco::class, function (Faker $faker) {
     return [
 
         'vendor_id' => 1,
-        'subcategories_id' => $faker->numberBetween($min = 1, $max = 20),
+        'subcategory_id' => $faker->numberBetween($min = 1, $max = 10),
         'brands_id' => $faker->numberBetween($min = 1, $max = 30),
         'part_number' => $faker->randomLetter . $faker->randomLetter . $faker->randomLetter . $faker->numerify('###-###'),
         'prefix' => $faker->randomElement($array = array('mtx', 'skf', 'pep', 'dal', 'jur', 'fla', 'ntn', 'dew')),

@@ -20,7 +20,7 @@ class CreateOrsProductsTable extends Migration
             // general item descriptors 
             $table->increments('id')->unique(); // primary key
             $table->unsignedInteger('vendor_id')->default(1);
-            $table->unsignedInteger('subcategories_id');
+            $table->unsignedInteger('subcategory_id')->index();
             $table->unsignedInteger('brands_id');
             $table->string('part_number');
             $table->string('prefix', 3);

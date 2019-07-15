@@ -1,6 +1,8 @@
 <?php
 
 use App\VendorContact;
+use App\Http\Controllers\UserInfoController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +25,6 @@ Visitor routes
  */
 
 Route::get('/', 'HomeController@index');
-
-// Route::get('/', function(){
-//     return view('home');
-// });
 
 
 
@@ -55,19 +53,6 @@ Route::get('/privacypolicy', function () {
 
 
 
-////////////////////////end of visitor routes///////////////////////////////////////
-
-
-
-
-
-
-
-
-
-///////////////////////////////////////start of cart routes ///////////////////////////////////
-
-
 
 /*
 Cart routes
@@ -85,46 +70,6 @@ Route::get('/guest-redirect', 'CartController@guestRedirect');
 
 
 
-/////////////////////////////////end of cart routes///////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-/////////////////////////start of user routes//////////////////////////////////////////////////////
-
-/*
-User routes
-
- */
-Route::get('/users', function () {
-    return view('users.dashboard');
-});
-
-Route::get('/users/reports', function () {
-    return view('users.invoices_reports');
-});
-
-Route::get('/users/profile', function () {
-    return view('users.profile');
-});
-
-Route::get('/users/settings', function () {
-    return view('users.settings');
-});
-
-
-
-/////////////////////////////////end of user routes ///////////////////////////////////////////////////////
-
-
-
-////////////////////////////////Start of authorized routes ///////////////////////////////////////////////
 
 
 /*
@@ -134,8 +79,42 @@ Authorizatized routes
 Auth::routes(['verify' => true]);
 
 Route::get('/my_account/{id}', 'UserController@my_account');
-Route::get('/my_account/{id}/current-orders', 'UserController@current_orders');
-Route::get('/my_account/{id}/past-orders', 'UserController@past_orders');
+
+
+/*
+User Order Routes
+
+*/
+Route::get('/my_account/{id}/past-orders', 'OrderController@past_orders');
+Route::resource('my_account/{id}/orders', 'OrderController');
+
+
+/*
+User shipping info Routes
+
+*/
+Route::get('/my_account/{id}/shipping-info', 'UserController@shipping_info');
+
+/*
+User Billing Info Routes
+
+*/
+
+Route::get('/my_account/{id}/billing-info', 'UserController@billing_info');
+
+Route::get('my_account/{id}/change-billing', 'UserInfoController@change_billing');
+
+/*
+User Invoice Routes
+
+*/
+Route::get('my_account/{id}/invoices', 'UserController@invoices');
+
+/*
+User Change Login Routes
+
+*/
+Route::get('/my_account/{id}/change-login', 'UserController@change_login');
 
 Route::get('profile', function () {
     // Only verified users may enter...
@@ -144,6 +123,9 @@ Route::get('profile', function () {
 
 
 /////////////////////////////////end of authorized routes///////////////////////////////////////////////////////
+
+Route::get('/brands', 'BrandController@all_brands');
+Route::get('/brand/{brand_name}', 'BrandController@brand');
 
 
 
@@ -236,8 +218,8 @@ Route::get('/services', function () {
 });
 
 // Store Category Routes
-Route::get('/category/{category_name}', 'ProductCategoryController@categories');
-Route::get('/category/{category_name}/{subcategory_name}', 'ProductCategoryController@products');
+Route::get('/category/{category_name}', 'CategoryController@categories');
+Route::get('/category/{category_name}/{subcategory_name}',  'CategoryController@products');
 Route::get('/product-search', 'ProductController@search');
 
 
@@ -283,23 +265,3 @@ Route::get('/services', function () {
 });
 
 /////////////////////////////////end of services routes /////////////////////////////////////
-
-
-
-
-
-
-
-Route::get('/test', function () {
-
-
-    // $contacts = App\Vendor::find(5)->hasManyVendorContacts;
-    // passes the vendor_id into the find variable, returning the vendor from the 
-    // Vendor model
-    //  $vendors = App\VendorContact::find(5)->vendorContactHasOneVendorId;
-
-
-
-
-    return view('test'); //->with('vendors', $vendors)->with('contacts', $contacts);
-});

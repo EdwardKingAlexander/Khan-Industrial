@@ -26,7 +26,7 @@
     <!-- Start of second Column -->
    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6 text-center card shadow p-2 m-2">
    
-   <h4><a href="">Shipping Address</a></h4>
+   <h4><a href="{{url('/my_account')}}/{{Auth::user()->id}}/shipping-info">Shipping Address</a></h4>
    
    <!-- End of second Column -->
 
@@ -36,7 +36,7 @@
 <!-- Start of Third column -->
   <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6 text-center card shadow p-2 m-2">
    
-   <h4><a href="">Billing Information</a></h4>
+   <h4><a href="{{url('/my_account')}}/{{Auth::user()->id}}/billing-info">Billing Information</a></h4>
    
    <!-- End of third column -->
 
@@ -46,7 +46,7 @@
 <!-- Start of 4th column -->
   <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6 text-center card shadow p-2 m-2">
    
-   <h4><a href="">Invoices</a></h4>
+   <h4><a href="{{url('/my_account')}}/{{Auth::user()->id}}/invoices">Invoices</a></h4>
    
    <!-- End of fourth column -->
 
@@ -55,7 +55,7 @@
 <!-- Start of fifth column -->
   <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6 text-center card shadow p-2 m-2">
    
-   <h4><a href="">Change Login Information</a></h4>
+   <h4><a href="{{url('/my_account')}}/{{Auth::user()->id}}/change-login">Change Login Information</a></h4>
    
    <!-- End of fifth column -->
 

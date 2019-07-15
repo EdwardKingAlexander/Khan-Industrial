@@ -35,6 +35,20 @@ class Category extends Model
 
 
     /**
+     * 
+     * Redefining route key
+     * 
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'category_name';
+    }
+
+
+
+
+    /**
      * Stating the categories table has a one to many relationship
      * with the subcategories table by referencing the model
      *

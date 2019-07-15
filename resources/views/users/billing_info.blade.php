@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
-My account
+
+@include('partials.forms.bill_to')
 
 @endsection

@@ -44,7 +44,7 @@
                         <p class="float-left">
                             <a href="#">Back to top</a>
                         </p>
-                        <p class="text-right text-muted">Designed and refined by <a href="rockymountainweb.design"><i>Rocky Mountain Web Design</i></a> | <span>v. 2.0</span></p>
+                        <p class="text-right text-muted">Designed and refined by <a href="{{url('https://rockymountainweb.design')}}"><i>Rocky Mountain Web Design</i></a> | <span>v. 2.0</span></p>
                     </div>
                 </div>
             </div>

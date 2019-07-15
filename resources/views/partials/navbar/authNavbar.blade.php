@@ -58,9 +58,8 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     
                     <a class="dropdown-item" href="{{ url('/my_account')}}/{{Auth::user()->id}}">My Account</a>
-                <a class="dropdown-item " href="{{url('/my_account')}}/{{Auth::user()->id}}/current-orders">Order History</a>
-                <a class="dropdown-item" href="{{ url('/reports') }}">Invoices & Reports</a>
-                <a class="dropdown-item" href="{{ url('/settings') }}/">Settings</a>
+                <a class="dropdown-item " href="{{url('/my_account')}}/{{Auth::user()->id}}/orders">Order History</a>
+                <a class="dropdown-item" href="{{url('/my_account')}}/{{Auth::user()->id}}/invoices">Invoices & Reports</a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
